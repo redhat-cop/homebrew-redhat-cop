@@ -6,7 +6,7 @@ class Jcliff < Formula
 
   bottle :unneeded
 
-  depends_on :java
+  depends_on :java => :optional
 
   def install
     libexec.install Dir["rules", "*.jar"]
