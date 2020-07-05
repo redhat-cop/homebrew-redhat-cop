@@ -11,9 +11,9 @@ class Jcliff < Formula
   def install
     libexec.install Dir["rules", "*.jar"]
 
-    (libexec/"bin").install "jcliff"
-    chmod 0755, libexec/"bin/jcliff"
-    (bin/"jcliff").write_env_script("#{libexec}/bin/jcliff", :JCLIFF_HOME => libexec.to_s)
+    (libexec).install "jcliff"
+    (bin/"jcliff").write_env_script("#{libexec}/jcliff", :JCLIFF_HOME => libexec.to_s)
+    chmod 0755, libexec/"jcliff"
   end
 
   def caveats
@@ -25,6 +25,6 @@ class Jcliff < Formula
 
   test do
     ENV["JBOSS_HOME"] = opt_libexec
-    assert_match "Jcliff version #{version}", shell_output("#{bin}/jcliff -v").chomp
+    assert_match "Jcliff version #{version}", shell_output("#{bin}/jcliff -v", 3).chomp
   end
 end
