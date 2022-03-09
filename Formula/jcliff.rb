@@ -4,7 +4,6 @@ class Jcliff < Formula
   url "https://github.com/bserdar/jcliff/releases/download/v2.12.7/jcliff-2.12.7-dist.tar.gz"
   sha256 "827ccf28653ecea9e97b6f208685a29ce24912087b8c2b52a15b4e4b3837fbef"
 
-  bottle :unneeded
 
   depends_on "openjdk" => :optional
 
